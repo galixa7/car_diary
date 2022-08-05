@@ -2,7 +2,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-
+  host: db
+  username: car_diary
+  password: postgres
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -17,5 +19,8 @@ test:
 production:
   <<: *default
   database: car_diary_production
-  username: car_diary
-  password: <%= ENV["CAR_DIARY_DATABASE_PASSWORD"] %>
+  url: postgres://twrwyeiqotaaab:45360a8b6e95fb32cafdd3f1eed973dfc7caafa0841b9e2cde2d4b335d36d599@ec2-3-213-228-206.compute-1.amazonaws.com:5432/delfcnm3cgbokq
+  username: twrwyeiqotaaab
+  password: 45360a8b6e95fb32cafdd3f1eed973dfc7caafa0841b9e2cde2d4b335d36d599
+  host: ec2-3-213-228-206.compute-1.amazonaws.com
+# url: <%= ENV['DATABASE_URL'] %>

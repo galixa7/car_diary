@@ -1,0 +1,29 @@
+FROM ruby:3.0.3-alpine3.13
+
+ARG APP_PATH=/myapp
+ARG APP_USER=appuser
+ARG APP_GROUP=appgroup
+
+RUN apk add --update \
+    --no-cache bash \
+    build-base \
+    git \
+    postgresql-dev \
+    postgresql-client && \
+  addgroup -S $APP_GROUP && \
+  adduser -S -s /sbin/nologin -G $APP_GROUP $APP_USER && \
+  mkdir $APP_PATH && \
+  chown $APP_USER:$APP_GROUP $APP_PATH
+
+WORKDIR $APP_PATH
+# Add a script to be executed every time the container starts.
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+COPY --chown=$APP_USER:$APP_GROUP Gemfile* $APP_PATH/
+RUN bundle install
+USER $APP_USER
+COPY --chown=$APP_USER:$APP_GROUP . $APP_PATH/
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
+# Start the main process.
+CMD ["rails", "server", "-b", "0.0.0.0"]
