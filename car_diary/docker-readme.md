@@ -67,9 +67,9 @@ under Rails.application.configure do
 ```
 
 ```
-docker-compose -f "docker-compose.dev" build
+docker-compose -f "docker-compose.dev.yml" build
 docker-compose run web rake db:create
-docker-compose -f "docker-compose.dev" up
+docker-compose -f "docker-compose.dev.yml" up
 ```
 
 At this point, you should be able to navigate to http://localhost:3000
@@ -94,7 +94,7 @@ under Rails.application.configure do
 ```
 
 ```
-docker-compose -f "docker-compose.prod" build
+docker-compose -f "docker-compose.prod.yml" build
 ```
 
 Push our web image to heroku
