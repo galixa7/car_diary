@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   config.hosts = [
-    "pacific-beyond-39780.herokuapp.com"
+    "shrouded-stream-13956.herokuapp.com"
   ]
   # Settings specified here will take precedence over those in config/application.rb.
 

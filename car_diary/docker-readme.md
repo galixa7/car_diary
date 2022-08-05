@@ -68,7 +68,7 @@ under Rails.application.configure do
 
 ```
 docker-compose -f "docker-compose.dev.yml" build
-docker-compose run web rake db:create
+docker-compose -f "docker-compose.dev.yml" run web rake db:create
 docker-compose -f "docker-compose.dev.yml" up
 ```
 
@@ -92,6 +92,23 @@ under Rails.application.configure do
     "heroku_app_name.herokuapp.com"
   ]
 ```
+
+Add Postgres Addon to your Heroku app and then
+
+Add your credentials to the .env file and edit the database.yml's production environment
+
+Example:
+config/database.yml
+```
+production:
+  <<: *default
+  database: car_diary_production
+  url: 
+  username: 
+  password: 
+  host: 
+```
+
 
 ```
 docker-compose -f "docker-compose.prod.yml" build
