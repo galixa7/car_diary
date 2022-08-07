@@ -93,6 +93,11 @@ under Rails.application.configure do
   ]
 ```
 
+Set, in config/environments/production.rb
+```
+  config.assets.compile = true
+```
+
 Add Postgres Addon to your Heroku app and then
 
 Add your credentials to the .env file and edit the database.yml's production environment
@@ -114,11 +119,17 @@ production:
 docker-compose -f "docker-compose.prod.yml" build
 ```
 
-Push our web image to heroku
+Push the web image to heroku
 ```
 heroku container:push web -a heroku_app_name --recursive
 ```
 -- recursive flag is needed for Heroku to use Dockerfile.web
+
+Run
+```
+heroku run rake secret -a heroku_app_name
+heroku config:set -a heroku_app_name SECRET_KEY_BASE=secret_key
+```
 
 Start the container in Heroku
 ```

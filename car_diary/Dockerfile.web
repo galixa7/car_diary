@@ -3,6 +3,9 @@ FROM ruby:3.0.3-alpine3.13
 ARG APP_PATH=/myapp
 ARG APP_USER=appuser
 ARG APP_GROUP=appgroup
+ENV RAILS_ENV production
+ENV RAILS_SERVE_STATIC_FILES true
+ENV RAILS_LOG_TO_STDOUT true
 
 RUN apk add --update \
     --no-cache bash \

@@ -19,8 +19,7 @@ test:
 production:
   <<: *default
   database: car_diary_production
-  url:     postgres://fdbljaszswravu:1580b87ec0b66c7ffa632f0eca8dfb343cb97b3b025e6b7141df9e2242d3daef@ec2-3-213-228-206.compute-1.amazonaws.com:5432/d3g5js6itodjn1
-  username: fdbljaszswravu
-  password: 1580b87ec0b66c7ffa632f0eca8dfb343cb97b3b025e6b7141df9e2242d3daef
-  host: ec2-3-213-228-206.compute-1.amazonaws.com
-# url: <%= ENV['DATABASE_URL'] %>
+  username: <%= ENV['DATABASE_USERNAME_PROD'] %>
+  password: <%= ENV['DATABASE_PW_PROD'] %>
+  host: <%= ENV['DATABASE_HOST_PROD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
