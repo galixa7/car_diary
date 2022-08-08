@@ -1,0 +1,10 @@
+<h1>Car Diary</h1>
+<h2>Welcome <%= current_user.username %></h2>
+<p>This is our empty Homepage</p>
+
+
+<%= current_user.content %>
+
+
+<%= link_to "Logout", destroy_user_session_path, method: :delete %><br ><br >
+<%= link_to "Edit Profile", edit_user_registration_path %>  
