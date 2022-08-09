@@ -1,31 +1,33 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.2"
+gem "rspec"
 
-gem "rails", "~> 7.0.3"
+#ruby "3.1.2"
 
-gem "sprockets-rails"
+#gem "rails", "~> 7.0.3"
 
-gem "pg", "~> 1.1"
+#gem "sprockets-rails"
 
-gem 'rspec-rails'
+#gem "pg", "~> 1.1"
 
-gem 'slim-rails'
+#gem 'rspec-rails'
 
-gem "puma", "~> 5.0"
+#gem 'slim-rails'
 
-gem "importmap-rails"
+#gem "puma", "~> 5.0"
 
-gem "turbo-rails"
+#gem "importmap-rails"
 
-gem "stimulus-rails"
+#gem "turbo-rails"
 
-gem "jbuilder"
+#gem "stimulus-rails"
 
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+#gem "jbuilder"
 
-gem "bootsnap", require: false
+#gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+
+#gem "bootsnap", require: false
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
