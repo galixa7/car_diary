@@ -1,5 +1,8 @@
 require "active_support/core_ext/integer/time"
 
+# Heroku, allowing host
+Rails.application.config.hosts << "shrouded-stream-13956.herokuapp.com"
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -91,5 +94,3 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
-
-Rails.application.config.hosts << "shrouded-stream-13956.herokuapp.com"

@@ -93,7 +93,7 @@ under Rails.application.configure do
   ]
 ```
 
-Set, in config/environments/production.rb
+Set, in config/environments/production.rb, line 34. (unless nginx, etc.. is used)
 ```
   config.assets.compile = true
 ```
