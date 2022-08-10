@@ -1,3 +1,0 @@
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-Started GET "/home/index" for 127.0.0.1 at 2022-08-01 20:59:53 +0300
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
