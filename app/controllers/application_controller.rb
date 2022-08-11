@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  
 
   protected
 
@@ -12,6 +13,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_up_path_for(resource)
-    'home#index'
+    'home_index_path'
   end
 end
